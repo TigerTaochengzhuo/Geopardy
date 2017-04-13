@@ -6,4 +6,12 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/game', function(req, res, next) {
+  res.render('game', {
+      'name': 'Addy',
+      'date': (new Date())
+  });
+});
+
 module.exports = router;
+
