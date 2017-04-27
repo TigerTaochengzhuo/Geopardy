@@ -20,5 +20,10 @@ router.get('/login', function(req, res, next) {
   });
 });
 
+router.get('/tiger', function(req, res, next) {
+  // res.send('Tiger');
+  res.render('leaderboard');
+});
+
 module.exports = router;
 
