@@ -1,6 +1,6 @@
 <button onclick="doSomething();">Click Me</button>
 
-<div id="map"></div>
+<div id="map" style="width:100; height:100vh"></div>
 
 <script>
     function doSomething() {
@@ -26,12 +26,6 @@
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 4,
             center: myLatlng
-        });
-
-        var marker = new google.maps.Marker({
-            position: myLatlng,
-            map: map,
-            title: 'Click to zoom'
         });
 
         map.addListener('center_changed', function() {
