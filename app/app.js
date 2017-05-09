@@ -5,12 +5,14 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var sassMiddleware = require('node-sass-middleware');
+var database = require('./utils/database');
 
 var index = require('./routes/index');
 var api = require('./routes/api');
 var users = require('./routes/users');
 
 var app = express();
+database.connect();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
