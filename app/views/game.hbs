@@ -1,10 +1,6 @@
 <button onclick="doSomething();">Click Me</button>
 
-<<<<<<< HEAD
-<div id="map" style="width:100; height:100vh"></div>
-=======
 <div id="map" style="width: 100%; height: 100vh;"></div>
->>>>>>> 4a750eaadb8d447aa1622a3864c1eb119202a229
 
 <script>
     function doSomething() {
@@ -23,23 +19,16 @@
 <script>
     function initMap() {
         var myLatlng = {
-            lat: -25.363,
-            lng: 131.044
+            lat: 34.26,
+            lng: 27.19
         };
 
         var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 4,
+            zoom: 3,
             center: myLatlng
-        });
-
-        map.addListener('center_changed', function() {
-            // 3 seconds after the center of the map has changed, pan back to the
-            // marker.
-            window.setTimeout(function() {
-                map.panTo(marker.getPosition());
-            }, 3000);
         });
     }
 </script>
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4cFsNGI0CNvZ_dWfc2fdIsO3JMWTpXDg&callback=initMap"></script>
+
