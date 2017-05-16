@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('express-session');
 var sassMiddleware = require('node-sass-middleware');
 var database = require('./utils/database');
 
@@ -31,6 +32,12 @@ app.use(sassMiddleware({
   sourceMap: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({ 
+  secret: 'keyboard cat', 
+  resave: false,
+  saveUninitialized: true,
+  cookie: { maxAge: 60000 }
+}));
 
 app.use('/', index);
 app.use('/api', api);

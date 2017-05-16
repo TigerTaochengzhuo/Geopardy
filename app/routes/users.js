@@ -18,4 +18,35 @@ router.post('/new', function(req, res, next) {
     });
 });
 
+/* GET users listing. */
+router.post('/signin', function(req, res, next) {
+    // Create new user
+
+    console.log(req.body);
+
+    var sql = `SELECT * FROM Users WHERE username = '${ req.body.username.toLowerCase() }' AND password = '${ req.body.password }';`;
+    console.log(sql)
+    database.connection.query(sql, function(error, results, fields) {
+        console.log( error, results)
+        if (error) { 
+            return res.send('There was an error', error);
+        }
+        if (results.length > 0) {
+            req.session.isUserLoggedIn = true;
+            return res.redirect('/');
+        } else {
+            req.session.isUserLoggedIn = false;
+            return res.redirect('/login');
+        }
+    });
+});
+
+/* GET users listing. */
+router.post('/signout', function(req, res, next) {
+    // Create new user
+    req.session.isUserLoggedIn = false;
+    return res.redirect('/');
+});
+
+
 module.exports = router;

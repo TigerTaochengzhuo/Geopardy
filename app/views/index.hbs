@@ -1,5 +1,16 @@
+<img src="./images/logo.png">
 <h1>Welcome to Geopardy!</h1>
 <p>A geography game</p>
-<a href="/game"><button>START</button></a>
+
+</img>
+
+{{#if isUserLoggedIn}}
+    <a href="/game"><button>START</button></a>
+    <a href="/logout"><button>SIGN OUT</button></a>
+{{else}}
+    <a href="/login"><button>CREATE ACCOUNT</button></a>
+    <a href="/signin"><button>SIGN IN</button></a>
+{{/if}}
+
 <br></br>
-<a href="/login"><button>Login</button></a>
+<a href="/leaderboard"><button>LEADERBOARD</button></a>

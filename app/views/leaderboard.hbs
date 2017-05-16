@@ -1,1 +1,21 @@
-<h1>Leaderboard</h1>
+<h1>Leaderboard</h1> 
+<table>
+    <tr>
+        <th>Username</th>
+        <th>Score</th>
+        <th>Time</th>
+    </tr>
+    {{#each leaderboard}}
+    <tr>
+        <td class="username">
+            {{ username }}
+        </td>
+        <td class="score">
+            {{ score }}
+        </td>
+        <td class="">
+            {{ time }}
+        </td>
+    </tr>
+    {{/each}}
+</table>

@@ -6,7 +6,7 @@ var countryElem = document.querySelector('#country');
 function geocodeCountry(pos) {
     var url = 'https://maps.googleapis.com/maps/api/geocode/json?'
     url += 'latlng=' + pos.lat + ', ' + pos.lng;
-    url += '&key=AIzaSyBMoWJv2wT0g5keBiLwDWDbrMh2QrX0sJ4';
+    url += '&key=AIzaSyA4cFsNGI0CNvZ_dWfc2fdIsO3JMWTpXDg';
 
     // window.open(url);
 
