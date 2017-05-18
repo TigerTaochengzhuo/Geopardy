@@ -66,7 +66,7 @@ INSERT INTO Answers VALUES( null, 'It is illegal to run out fuel on a highway', 
 INSERT INTO Answers VALUES( null, 'Marble is mainly produced here.', 'GR', 3, 0, 0);
 INSERT INTO Answers VALUES( null, 'The first ever chocolate bar was made here.', 'GT', 3, 0, 0);
 INSERT INTO Answers VALUES( null, 'We have the largest dog cementery.', 'IL', 3, 0, 0);
-INSERT INTO Answers VALUES( null, 'We are the largest wine producers in the world.' 3, 0, 0);
+INSERT INTO Answers VALUES( null, 'We are the largest wine producers in the world.', 'FR' 3, 0, 0);
 INSERT INTO Answers VALUES( null, 'We have more pets than children.', 'JP', 3, 0, 0);
 INSERT INTO Answers VALUES( null, 'Artists can pay their taxes with their artwork here.', 'MX', 3, 0, 0);
 INSERT INTO Answers VALUES( null, 'We have the highest gasoline price in the world.', 'NO', 3, 0, 0);
