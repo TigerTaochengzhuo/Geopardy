@@ -3,10 +3,35 @@ var mapElem = document.querySelector('#map');
 var posElem = document.querySelector('#position');
 var countryElem = document.querySelector('#country');
 
+var correctanswer = null;
+function doSomething() {
+    $.ajax({
+            'url': '/api/game/start '
+        })
+        .done(function(data) {
+            alert(data.message);
+        })
+        .fail(function(err) {
+            alert('Failed');
+        });
+}
+function getNextQuestion() {
+    $.ajax({
+        'url': '/api/game/questions '
+    })
+    .done(function(data) {
+        correctanswer = data.answer.country;
+        alert(data.answer.answerText);
+    })
+    .fail(function(err) {
+        alert('Failed');
+    });
+}
+
 function geocodeCountry(pos) {
     var url = 'https://maps.googleapis.com/maps/api/geocode/json?'
     url += 'latlng=' + pos.lat + ', ' + pos.lng;
-    url += '&key=AIzaSyBMoWJv2wT0g5keBiLwDWDbrMh2QrX0sJ4';
+    url += '&key=AIzaSyA4cFsNGI0CNvZ_dWfc2fdIsO3JMWTpXDg';
 
     // window.open(url);
 
@@ -27,6 +52,15 @@ function geocodeCountry(pos) {
                     }
                 }
                 countryElem.innerHTML = countryComp.long_name;
+                if (correctanswer) {
+                    if (correctanswer == countryComp.short_name) {
+                        correctanswer = null;
+                        alert('You got it right!');
+                        getNextQuestion();
+                    } else {
+                        alert('Wrong. Try again.');
+                    }
+                }
             }
         }
     }
@@ -54,6 +88,7 @@ function initMap() {
 
         geocodeCountry(pos);
     });
+
 }
 
 
