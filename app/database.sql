@@ -36,16 +36,7 @@ CREATE TABLE GameAnswers (
 );
 
 
-INSERT INTO Answers VALUES( null, 'I have the longest wall.', 'CN', 1);
-INSERT INTO Answers VALUES( null, 'I am the home to the worlds largest building.', 'AE', 1);
-INSERT INTO Answers VALUES( null, 'I produce the most oil.', 'SA', 1);
-INSERT INTO Answers VALUES( null, 'I have the most time zones.', 'FR', 1);
-INSERT INTO Answers VALUES( null, 'I have the most billionaires.', 'US', 1);
-INSERT INTO Answers VALUES( null, 'I have the best economy.', 'CH', 1);
-INSERT INTO Answers VALUES( null, 'I have the longest street.', 'CA', 1);
-INSERT INTO Answers VALUES( null, 'I have invented french fries.', 'BE', 1);
-INSERT INTO Answers VALUES( null, 'I am the only country to be named after a tree.', 'BR', 1);
-INSERT INTO Answers VALUES( null, 'I consume more coca-cola than any other country.', 'IS', 1);
+
 INSERT INTO Answers VALUES( null, 'I have the longest wall.', 'CN', 1, 0, 0);
 INSERT INTO Answers VALUES( null, 'I am the home to the worlds largest building.', 'AE', 1, 0, 0);
 INSERT INTO Answers VALUES( null, 'I produce the most oil.', 'SA', 1, 0, 0);

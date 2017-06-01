@@ -70,9 +70,11 @@ function geocodeCountry(pos) {
 
 function initMap() {
     var options = {
+        disableDefaultUI: true,
+        draggable: false,
         center: {
             lat: 40.53,
-            lng: -74
+            lng: -10
         },
         zoom: 2
     }
@@ -90,6 +92,8 @@ function initMap() {
     });
 
 }
+
+//var score = new Array ()
 
 
 
