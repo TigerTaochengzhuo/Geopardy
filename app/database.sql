@@ -46,7 +46,6 @@ INSERT INTO Answers VALUES( null, 'I have the longest street.', 'CA', 3;
 INSERT INTO Answers VALUES( null, 'I have invented french fries.', 'BE', 1);
 INSERT INTO Answers VALUES( null, 'I am the only country to be named after a tree.', 'BR', 2);
 INSERT INTO Answers VALUES( null, 'I consume more coca-cola than any other country.', 'IS', 2);
-INSERT INTO Answers VALUES( null, 'I have the longest wall.', 'CN', 1);
 INSERT INTO Answers VALUES( null, 'I am the home to the worlds largest building.', 'AE', 1);
 INSERT INTO Answers VALUES( null, 'I produce the most oil.', 'SA', 1);
 INSERT INTO Answers VALUES( null, 'I have the most time zones.', 'FR', 1);
@@ -80,12 +79,8 @@ INSERT INTO Answers VALUES( null, '80% of our land mass is mostly glaciers and i
 INSERT INTO Answers VALUES( null, 'Home of heavy metal.' , 'FI', 3);
 INSERT INTO Answers VALUES( null, 'We have a spa just for elephants.' , 'IN', 3);
 INSERT INTO Answers VALUES( null, 'Rum is our national drink.', 'JM', 2);
-INSERT INTO Answers VALUES( null, 'We are landlocked, we do not have full access to the sea.' , 'MK' , 4);
-INSERT INTO Answers VALUES( null, 'The border between U.S.A. and me is the second largest bored in the world' , 'MX' , 2);
-INSERT INTO Answers VALUES( null, 'If you own a television here, you must pay annual licensing fee.' , 'NO' , 3);
-INSERT INTO Answers VALUES( null, 'Our streets are paved with gold' , 'PR' , 2);
-INSERT INTO Answers VALUES( null, 'I have the best economy.', 'CH', 1);
+INSERT INTO Answers VALUES( null, 'The border between U.S.A. and I is the second largest boarder in the world', 'MX' , 2);
+INSERT INTO Answers VALUES( null, 'If you own a television here, you must pay annual licensing fee.', 'NO' , 3);
+INSERT INTO Answers VALUES( null, 'Our streets are paved with gold', 'PR' , 2);
 INSERT INTO Answers VALUES( null, 'I have the longest street.', 'CA', 1);
-INSERT INTO Answers VALUES( null, 'I have invented french fries.', 'BE', 1);
-INSERT INTO Answers VALUES( null, 'I am the only country to be named after a tree.', 'BR', 1);
-INSERT INTO Answers VALUES( null, 'I consume more coca-cola than any other country.', 'IS', 1);
+

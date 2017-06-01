@@ -4,7 +4,9 @@ var posElem = document.querySelector('#position');
 var countryElem = document.querySelector('#country');
 var questionElem = document.querySelector('#question');
 
+var score = 0;
 var correctanswer = null;
+
 function doSomething() {
     $.ajax({
             'url': '/api/game/start '
@@ -16,6 +18,12 @@ function doSomething() {
             alert('Failed');
         });
 }
+
+function updateScore() {
+    document.querySelector('#score').innerHTML = 'Score: ' + score;
+}
+updateScore();
+
 function getNextQuestion() {
     $.ajax({
         'url': '/api/game/questions '
@@ -24,7 +32,7 @@ function getNextQuestion() {
         correctanswer = data.answer.country;
         // alert(data.answer.answerText);
         questionElem.innerHTML = data.answer.answerText;
-        console.log(data.answer.answerText)
+
     })
     .fail(function(err) {
         alert('Failed');
@@ -61,7 +69,8 @@ function geocodeCountry(pos) {
                     if (correctanswer == countryComp.short_name) {
                         correctanswer = null;
                         //alert('You got it right!');
-                        
+                        score = score + 1;
+                        updateScore();
                         getNextQuestion();
                     } else {
                         alert('Wrong. Try again.');
@@ -125,7 +134,7 @@ var x = setInterval(function() {
     if (distance < 0) {
         clearInterval(x);
         document.getElementById("demo").innerHTML = "EXPIRED";
-        getNextQuestion();
+        //getNextQuestion();
     }
 }, 1000);
 
