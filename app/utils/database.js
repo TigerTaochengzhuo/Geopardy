@@ -1,3 +1,4 @@
+var config = require('../config');
 var mysql = require('mysql');
 
 var database = {
@@ -5,12 +6,18 @@ var database = {
 };
 
 database.connect = function() {
-    this.connection = mysql.createConnection({
-        host: 'localhost',
-        user: 'adedoyinfamuyiwa',
-        password: '',
-        database: 'geopardy'
-    });
+    this.connectionParams = config.database;
+    
+    if (!this.connectionParams) {
+        this.connectionParams = {
+            host: 'localhost',
+            user: 'adedoyinfamuyiwa',
+            password: '',
+            database: 'geopardy'
+        };
+    }
+    
+    this.connection = mysql.createConnection(this.connectionParams);
     this.connection.connect();
 }
 

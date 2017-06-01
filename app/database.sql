@@ -89,4 +89,3 @@ INSERT INTO Answers VALUES( null, 'I have the longest street.', 'CA', 1);
 INSERT INTO Answers VALUES( null, 'I have invented french fries.', 'BE', 1);
 INSERT INTO Answers VALUES( null, 'I am the only country to be named after a tree.', 'BR', 1);
 INSERT INTO Answers VALUES( null, 'I consume more coca-cola than any other country.', 'IS', 1);
-
