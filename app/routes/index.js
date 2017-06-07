@@ -28,6 +28,7 @@ router.get('/gameover', function(req, res, next) {
 router.get('/login', function(req, res, next) {
   res.render('login', {
       'name': 'Addy',
+      'error': req.query.error,
       'date': (new Date())
   });
 });

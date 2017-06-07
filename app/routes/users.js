@@ -42,7 +42,7 @@ router.post('/signin', function(req, res, next) {
             return res.redirect('/');
         } else {
             req.session.isUserLoggedIn = false;
-            return res.redirect('/login');
+            return res.redirect('/login?error=true');
         }
     });
 });
