@@ -14,8 +14,14 @@ router.post('/new', function(req, res, next) {
         if (error) { 
             return res.send('There was an error', error);
         }
-        return res.send('User created');
+        return res.redirect('/user/welcome');
     });
+});
+
+/* GET users listing. */
+router.get('/welcome', function(req, res, next) {
+    // Create new user
+    return res.render('welcome');
 });
 
 /* GET users listing. */
