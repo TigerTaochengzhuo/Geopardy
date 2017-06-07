@@ -2,11 +2,8 @@ var map;
 var mapElem = document.querySelector('#map');
 var posElem = document.querySelector('#position');
 var countryElem = document.querySelector('#country');
-var questionElem = document.querySelector('#question');
 
-var score = 0;
 var correctanswer = null;
-
 function doSomething() {
     $.ajax({
             'url': '/api/game/start '
@@ -18,21 +15,13 @@ function doSomething() {
             alert('Failed');
         });
 }
-
-function updateScore() {
-    document.querySelector('#score').innerHTML = 'Score: ' + score;
-}
-updateScore();
-
 function getNextQuestion() {
     $.ajax({
         'url': '/api/game/questions '
     })
     .done(function(data) {
         correctanswer = data.answer.country;
-        // alert(data.answer.answerText);
-        questionElem.innerHTML = data.answer.answerText;
-
+        alert(data.answer.answerText);
     })
     .fail(function(err) {
         alert('Failed');
@@ -45,8 +34,6 @@ function geocodeCountry(pos) {
     url += '&key=AIzaSyA4cFsNGI0CNvZ_dWfc2fdIsO3JMWTpXDg';
 
     // window.open(url);
-    
-
 
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
@@ -68,9 +55,7 @@ function geocodeCountry(pos) {
                 if (correctanswer) {
                     if (correctanswer == countryComp.short_name) {
                         correctanswer = null;
-                        //alert('You got it right!');
-                        score = score + 1;
-                        updateScore();
+                        alert('You got it right!');
                         getNextQuestion();
                     } else {
                         alert('Wrong. Try again.');
@@ -89,7 +74,7 @@ function initMap() {
         draggable: false,
         center: {
             lat: 40.53,
-            lng: -74
+            lng: -10
         },
         zoom: 2
     }
@@ -107,10 +92,6 @@ function initMap() {
     });
 
 }
-
-
-
-
 
 
 // Set the date we're counting down to
