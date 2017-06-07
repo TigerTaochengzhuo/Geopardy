@@ -71,7 +71,6 @@ function geocodeCountry(pos) {
 function initMap() {
     var options = {
         disableDefaultUI: true,
-        draggable: false,
         center: {
             lat: 40.53,
             lng: -10
