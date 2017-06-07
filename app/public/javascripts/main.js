@@ -85,6 +85,8 @@ function geocodeCountry(pos) {
 
 function initMap() {
     var options = {
+        disableDefaultUI: true,
+        draggable: false,
         center: {
             lat: 40.53,
             lng: -74
@@ -112,7 +114,7 @@ function initMap() {
 
 
 // Set the date we're counting down to
-var countDownDate = new Date().getTime() + 10000;
+var countDownDate = new Date().getTime() + 120000;
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -133,9 +135,9 @@ var x = setInterval(function() {
     // If the count down is over, write some text 
     if (distance < 0) {
         clearInterval(x);
-        document.getElementById("demo").innerHTML = "EXPIRED";
-        //getNextQuestion();
+        //document.getElementById("demo").innerHTML = 'EXPIRED';
+        window.location = '/gameover';
+       
     }
 }, 1000);
 
-setInterval();

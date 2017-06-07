@@ -50,11 +50,7 @@ router.get('/game/:gameID/check', function(req, res, next) {
   });
 });
 
-router.get('/signout', function(req, res, next) {
-  res.json({
-      
-  });
-});
+
 
 module.exports = router;
 

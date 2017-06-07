@@ -18,6 +18,13 @@ router.get('/game', function(req, res, next) {
   });
 });
 
+router.get('/gameover', function(req, res, next) {
+  res.render('gameover', {
+      'name': 'Addy',
+      'date': (new Date())
+  });
+});
+
 router.get('/login', function(req, res, next) {
   res.render('login', {
       'name': 'Addy',
@@ -31,6 +38,21 @@ router.get('/signin', function(req, res, next) {
       'date': (new Date())
   });
 });
+
+router.get('/signout', function(req, res, next) {
+  res.render('signout', {
+      'name': 'Addy',
+      'date': (new Date())
+  });
+});
+
+router.get('/welcome', function(req, res, next) {
+  res.render('welcome', {
+      'name': 'Addy',
+      'date': (new Date())
+  });
+});
+
 
 router.get('/leaderboard', function(req, res, next) {
 
