@@ -93,14 +93,6 @@ function initMap() {
 
 }
 
-//var score = new Array ()
-
-
-
-
-
-
-
 
 // Set the date we're counting down to
 var countDownDate = new Date().getTime() + 10000;
