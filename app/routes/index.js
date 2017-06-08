@@ -25,18 +25,15 @@ router.get('/gameover', function(req, res, next) {
   });
 });
 
-router.get('/login', function(req, res, next) {
-  res.render('login', {
-      'name': 'Addy',
-      'error': req.query.error,
-      'date': (new Date())
+router.get('/create', function(req, res, next) {
+  res.render('create', {
+      'error': req.query.error
   });
 });
 
 router.get('/signin', function(req, res, next) {
   res.render('signin', {
-      'name': 'Addy',
-      'date': (new Date())
+      'error': req.query.error
   });
 });
 

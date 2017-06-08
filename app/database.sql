@@ -12,7 +12,6 @@ CREATE TABLE Answers (
 );
 
 CREATE TABLE Users (
-    userID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(10) NOT NULL,
     password VARCHAR(10) NOT NULL
 );

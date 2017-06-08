@@ -3,6 +3,12 @@ var database = require('../utils/database');
 var router = express.Router();
 
 /* GET users listing. */
+router.get('/welcome', function(req, res, next) {
+    // Create new user
+    return res.render('welcome');
+});
+
+/* GET users listing. */
 router.post('/new', function(req, res, next) {
     // Create new user
 
@@ -14,14 +20,8 @@ router.post('/new', function(req, res, next) {
         if (error) { 
             return res.send('There was an error', error);
         }
-        return res.redirect('/user/welcome');
+        return res.redirect('/signin?newuser=true');
     });
-});
-
-/* GET users listing. */
-router.get('/welcome', function(req, res, next) {
-    // Create new user
-    return res.render('welcome');
 });
 
 /* GET users listing. */
@@ -42,7 +42,7 @@ router.post('/signin', function(req, res, next) {
             return res.redirect('/');
         } else {
             req.session.isUserLoggedIn = false;
-            return res.redirect('/login?error=true');
+            return res.redirect('/signin?error=true');
         }
     });
 });

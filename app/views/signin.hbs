@@ -1,3 +1,7 @@
+{{#if error }}
+    <p style="color:red"> Login Failed. Please try again. </p>
+{{/if}}
+<h1>Sign In</h1>
 <form action="/users/signin" method="POST">
     <label for="name">Name</label>
     <br></br>
