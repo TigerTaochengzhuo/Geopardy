@@ -3,18 +3,18 @@
     <tr>
         <th>Username</th>
         <th>Score</th>
-        <th>Time</th>
+        <th>Date</th>
     </tr>
     {{#each leaderboard}}
     <tr>
         <td class="username">
-            {{ username }}
+            {{username}}
         </td>
         <td class="score">
-            {{ score }}
+            {{score}}
         </td>
-        <td class="">
-            {{ time }}
+        <td class="date">
+            {{endTime}}
         </td>
     </tr>
     {{/each}}

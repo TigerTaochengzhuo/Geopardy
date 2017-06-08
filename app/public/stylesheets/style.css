@@ -9,6 +9,7 @@ a {
 .bottom-right-logo {
   position: fixed;
   bottom: 10px;
-  right: 10px; }
+  right: 10px;
+  background-color: #87EA61; }
 
 /*# sourceMappingURL=style.css.map */
