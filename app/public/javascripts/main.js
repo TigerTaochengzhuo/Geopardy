@@ -2,26 +2,47 @@ var map;
 var mapElem = document.querySelector('#map');
 var posElem = document.querySelector('#position');
 var countryElem = document.querySelector('#country');
+var questionElem = document.querySelector('#question');
 
+var score = 0;
+var gameID = null;
 var correctanswer = null;
+
 function doSomething() {
     $.ajax({
+            'method': 'POST',
             'url': '/api/game/start '
         })
         .done(function(data) {
+            gameID = data.gameID;
             alert(data.message);
         })
         .fail(function(err) {
             alert('Failed');
         });
 }
+
+doSomething();
+
+function updateScore() {
+    document.querySelector('#score').innerHTML = 'Score: ' + score;
+}
+updateScore();
+
 function getNextQuestion() {
     $.ajax({
-        'url': '/api/game/questions '
+        'method': 'POST',
+        'url': '/api/game/questions',
+        'data': { gameID: gameID }
     })
     .done(function(data) {
-        correctanswer = data.answer.country;
-        alert(data.answer.answerText);
+        if (data.answer && data.answer.country) {
+            correctanswer = data.answer.country;
+            //alert(data.answer.answerText);
+            questionElem.innerHTML = data.answer.answerText;
+        } else {
+            //getNextQuestion();
+        }
     })
     .fail(function(err) {
         alert('Failed');
@@ -56,6 +77,8 @@ function geocodeCountry(pos) {
                     if (correctanswer == countryComp.short_name) {
                         correctanswer = null;
                         alert('You got it right!');
+                          score = score + 1;
+                          updateScore();
                         getNextQuestion();
                     } else {
                         alert('Wrong. Try again.');
@@ -116,8 +139,20 @@ var x = setInterval(function() {
     if (distance < 0) {
         clearInterval(x);
         //document.getElementById("demo").innerHTML = 'EXPIRED';
-        window.location = '/gameover';
-       
+        
+        $.ajax({
+                'method': 'POST',
+                'url': '/api/game/end',
+                'data': { gameID: gameID, score: score }
+            })
+            .done(function(data) {
+                window.location = '/gameover';
+                alert(data.message);
+            })
+            .fail(function(err) {
+                window.location = '/gameover';
+                alert('Failed');
+            });
     }
 }, 1000);
 

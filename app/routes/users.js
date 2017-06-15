@@ -39,9 +39,11 @@ router.post('/signin', function(req, res, next
             return res.send('There was an error', error);
         }
         if (results.length > 0) {
+            req.session.userObject = results[0];
             req.session.isUserLoggedIn = true;
             return res.redirect('/');
         } else {
+            req.session.userObject = null;
             req.session.isUserLoggedIn = false;
             return res.redirect('/signin?error=true');
         }
@@ -51,6 +53,7 @@ router.post('/signin', function(req, res, next
 /* GET users listing. */
 router.post('/signout', function(req, res, next) {
     // Create new user
+    req.session.userObject = null;
     req.session.isUserLoggedIn = false;
     return res.redirect('/');
 });
