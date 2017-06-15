@@ -12,10 +12,14 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/game', function(req, res, next) {
-  res.render('game', {
-      'name': 'Addy',
-      'date': (new Date())
-  });
+  if (!req.session.isUserLoggedIn) {
+    return res.redirect('/signin');
+  } {
+    return res.render('game', {
+        'name': 'Addy',
+        'date': (new Date())
+    });
+  }
 });
 
 router.get('/gameover', function(req, res, next) {

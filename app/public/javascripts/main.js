@@ -8,7 +8,7 @@ var score = 0;
 var gameID = null;
 var correctanswer = null;
 
-function doSomething() {
+function startGame() {
     $.ajax({
             'method': 'POST',
             'url': '/api/game/start '
@@ -16,13 +16,22 @@ function doSomething() {
         .done(function(data) {
             gameID = data.gameID;
             alert(data.message);
+            
+            getNextQuestion();
         })
         .fail(function(err) {
             alert('Failed');
         });
+
+
 }
 
-doSomething();
+// window.onload = function() {
+    setTimeout(function() {
+        startGame();
+    }, 1000);
+// }
+
 
 function updateScore() {
     document.querySelector('#score').innerHTML = 'Score: ' + score;
@@ -83,6 +92,8 @@ function geocodeCountry(pos) {
                     } else {
                         alert('Wrong. Try again.');
                     }
+                } else {
+                    getNextQuestion();
                 }
             }
         }
@@ -112,7 +123,6 @@ function initMap() {
 
         geocodeCountry(pos);
     });
-
 }
 
 
@@ -146,13 +156,19 @@ var x = setInterval(function() {
                 'data': { gameID: gameID, score: score }
             })
             .done(function(data) {
-                window.location = '/gameover';
+                gotoGameOver();
                 alert(data.message);
             })
             .fail(function(err) {
-                window.location = '/gameover';
+                gotoGameOver();
                 alert('Failed');
             });
     }
 }, 1000);
+
+function gotoGameOver() {
+    setTimeout(function() {
+        window.location = '/gameover';
+    }, 1000);
+}
 

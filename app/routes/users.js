@@ -53,6 +53,7 @@ router.post('/signin', function(req, res, next
 /* GET users listing. */
 router.post('/signout', function(req, res, next) {
     // Create new user
+    console.log('Signed Out');
     req.session.userObject = null;
     req.session.isUserLoggedIn = false;
     return res.redirect('/');

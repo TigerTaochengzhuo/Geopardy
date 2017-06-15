@@ -6,7 +6,7 @@ var numOfGames = 0;
 
 router.post('/game/start', function(req, res, next) {
     if (!req.session.userObject || !req.session.userObject.userID) {
-        return res.json({ error: '' });
+        return res.json({ error: 'Not logged in' });
     }
     
     var userID = req.session.userObject.userID;
@@ -28,8 +28,12 @@ router.post('/game/start', function(req, res, next) {
 });
 
 router.post('/game/questions', function(req, res, next) {
-    if (!req.session.userObject || !req.session.userObject.userID || !req.body.gameID) {
-        return res.json({ error: '' });
+    if (!req.session.userObject || !req.session.userObject.userID) {
+        return res.json({ error: 'Not Logged In' });
+    }
+    
+    if (!req.body.gameID) {
+        return res.json({ error: 'No Game ID' });
     }
 
     var gameID = req.body.gameID;
