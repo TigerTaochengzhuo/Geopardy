@@ -41,7 +41,7 @@ function getNextQuestion() {
             //alert(data.answer.answerText);
             questionElem.innerHTML = data.answer.answerText;
         } else {
-            getNextQuestion();
+            //getNextQuestion();
         }
     })
     .fail(function(err) {
