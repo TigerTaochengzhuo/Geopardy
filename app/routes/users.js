@@ -25,7 +25,8 @@ router.post('/new', function(req, res, next) {
 });
 
 /* GET users listing. */
-router.post('/signin', function(req, res, next) {
+router.post('/signin', function(req, res, next
+) {
     // Create new user
 
     console.log(req.body);
