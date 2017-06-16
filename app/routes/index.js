@@ -41,7 +41,7 @@ router.get('/signin', function(req, res, next) {
   });
 });
 
-router.get('/signout', function(req, res, next) {
+router.get('/logout', function(req, res, next) {
   res.render('signout', {
       'name': 'Addy',
       'date': (new Date())
